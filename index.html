@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Plantilla de Descarga</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <!-- HEADER COLAPSABLE -->
+        <header class="header" id="main-header">
+            <div class="header-container">
+                <div class="logo">MiVideojuego</div>
+                <nav class="nav">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#caracteristicas">Características</a>
+                    <a href="#contacto">Contacto</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- CUERPO PRINCIPAL (BANNER TOTAL) -->
+        <main class="hero-banner" id="inicio">
+            <!-- Imagen Izquierda -->
+            <div class="banner-side side-left">
+                <img
+                    src="https://via.placeholder.com/400x800?text=Arte+Izquierda"
+                    alt="Arte Izquierda"
+                />
+            </div>
+
+            <!-- Contenido Central -->
+            <div class="banner-content">
+                <h1 class="hero-title">¡Prepárate para la Aventura!</h1>
+                <p class="hero-subtitle">
+                    Descarga la última versión ya mismo.
+                </p>
+                <a href="#" class="btn-download">DESCARGAR AHORA</a>
+            </div>
+
+            <!-- Imagen Derecha -->
+            <div class="banner-side side-right">
+                <img
+                    src="https://via.placeholder.com/400x800?text=Arte+Derecha"
+                    alt="Arte Derecha"
+                />
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer" id="contacto">
+            <div class="footer-container">
+                <div class="footer-info">
+                    <h3>Contacto</h3>
+                    <p>Email: soporte@tuweb.com</p>
+                    <p>Comunidad: discord.gg/tuproyecto</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>
+                        &copy; 2026 TuProyecto. Todos los derechos reservados.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JAVASCRIPT PARA EL HEADER -->
+        <script>
+            let lastScrollTop = 0;
+            const header = document.getElementById("main-header");
+
+            window.addEventListener("scroll", function () {
+                let scrollTop =
+                    window.pageYOffset || document.documentElement.scrollTop;
+
+                if (scrollTop > lastScrollTop) {
+                    // Al hacer scroll hacia ABAJO, ocultamos el header
+                    header.style.top = "-80px";
+                } else {
+                    // Al hacer scroll hacia ARRIBA, mostramos el header
+                    header.style.top = "0";
+                }
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Evita valores negativos
+            });
+        </script>
+    </body>
+</html>
